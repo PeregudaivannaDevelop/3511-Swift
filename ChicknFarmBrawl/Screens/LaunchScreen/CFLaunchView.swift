@@ -4,7 +4,7 @@ struct CFLaunchView: View {
     
     @State private var progress: CGFloat = 0.0
     @State private var isActive = false
-    
+       
     var body: some View {
         NavigationView {
             VStack {

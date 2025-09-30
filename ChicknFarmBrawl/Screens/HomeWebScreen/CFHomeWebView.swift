@@ -2,8 +2,8 @@ import SwiftUI
 import WebKit
 
 struct CFHomeWebView: View {
-    private let urlString = "https://3037-web-gl.vercel.app/"
-
+    private let urlString = "https://3511-web-gl.vercel.app/"
+ 
     var body: some View {
         WebContainer(url: URL(string: urlString)!)
             .ignoresSafeArea(.all)
@@ -11,7 +11,7 @@ struct CFHomeWebView: View {
     }
 }
 
-
+ 
 struct WebContainer: UIViewRepresentable {
     let url: URL
 

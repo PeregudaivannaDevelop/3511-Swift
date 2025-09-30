@@ -9,4 +9,6 @@ extension ShapeStyle where Self == Color {
     public static var pink2: Color { Color(hex: 0x8000FF) }
     public static var white: Color { Color(hex: 0xFFFFFF) }
     public static var blue: Color { Color(hex: 0x0D47A1) }
+    public static var blue1: Color { Color(hex: 0x0D47A1) }
+    public static var blue3: Color { Color(hex: 0x0D47A1) }
 }
