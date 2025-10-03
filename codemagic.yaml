@@ -4,16 +4,16 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     integrations:
-      app_store_connect: eggmatch
+      app_store_connect: farmbrawl
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.revinproj.app
+        bundle_identifier: com.PeregudaDev.app
       vars:
-        BUNDLE_ID: "com.revinproj.app"
-        XCODE_WORKSPACE: "ChicknMatch.xcworkspace" # <-- Put the name of your Xcode workspace here
-        XCODE_SCHEME: "ChicknMatch" # <-- Put the name of your Xcode scheme here
-        APP_STORE_APPLE_ID: 6752404045
+        BUNDLE_ID: "com.PeregudaDev.app"
+        XCODE_WORKSPACE: "ChicknFarmBrawl.xcworkspace" # <-- Put the name of your Xcode workspace here
+        XCODE_SCHEME: "ChicknFarmBrawl" # <-- Put the name of your Xcode scheme here
+        APP_STORE_APPLE_ID: 6753175730
       xcode: latest
       cocoapods: default
     scripts:
