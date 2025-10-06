@@ -3,11 +3,16 @@ import WebKit
 
 struct CFHomeWebView: View {
     private let urlString = "https://3511-web-gl.vercel.app/"
- 
+    
     var body: some View {
         WebContainer(url: URL(string: urlString)!)
             .ignoresSafeArea(.all)
             .hideNavigationBar()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    AppDelegate.lock([.landscapeLeft, .landscapeRight], rotateTo: .landscapeRight)
+                }
+            }
     }
 }
 

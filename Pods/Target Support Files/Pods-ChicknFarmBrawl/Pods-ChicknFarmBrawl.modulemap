@@ -1,4 +1,4 @@
-framework module Pods_ChicknFarmBrawl {
+module Pods_ChicknFarmBrawl {
   umbrella header "Pods-ChicknFarmBrawl-umbrella.h"
 
   export *

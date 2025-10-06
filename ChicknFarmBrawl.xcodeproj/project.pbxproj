@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1354C92E93ECC100A5D14D /* AppEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */; };
+		5F1354CA2E93ECC100A5D14D /* StartupGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354C72E93ECC100A5D14D /* StartupGate.swift */; };
+		5F1354CC2E93ECC900A5D14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */; };
+		5F1354D52E93ECE600A5D14D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F1354CD2E93ECE600A5D14D /* index.html */; };
+		5F1354D62E93ECE600A5D14D /* UserAgentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CE2E93ECE600A5D14D /* UserAgentBuilder.swift */; };
+		5F1354D72E93ECE600A5D14D /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354D02E93ECE600A5D14D /* WebViewCoordinator.swift */; };
+		5F1354D82E93ECE600A5D14D /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354D32E93ECE600A5D14D /* PrivacyView.swift */; };
+		5F1354D92E93ECE600A5D14D /* WebSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */; };
+		5F1354DA2E93ECE600A5D14D /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CF2E93ECE600A5D14D /* WebViewContainer.swift */; };
+		5F1354DC2E93ED1D00A5D14D /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */; };
+		5F1354DE2E93F0C400A5D14D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */; };
 		720EBD1E2E8BD710009CE397 /* ChicknFarmBrawlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */; };
 		720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720EBD1B2E8BD710009CE397 /* Assets.xcassets */; };
 		720EBD262E8BD77D009CE397 /* CFHomeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD212E8BD77D009CE397 /* CFHomeWebView.swift */; };
@@ -14,11 +25,22 @@
 		720EBD2C2E8BD784009CE397 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD282E8BD784009CE397 /* View+Extensions.swift */; };
 		720EBD2D2E8BD784009CE397 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD292E8BD784009CE397 /* Color+Extensions.swift */; };
 		720EBD2E2E8BD784009CE397 /* ShapeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD2A2E8BD784009CE397 /* ShapeStyle+Extensions.swift */; };
-		F1524997A91B0A7D40FADE11 /* Pods_ChicknFarmBrawl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC43A0383366B2C2D223F3AC /* Pods_ChicknFarmBrawl.framework */; };
+		C9B39F8933451CA6565A8A74 /* libPods-ChicknFarmBrawl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C432CF0CAF6A89D54279B0 /* libPods-ChicknFarmBrawl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C2B6C095DF13B41E0DEB86B /* Pods-ChicknFarmBrawl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicknFarmBrawl.debug.xcconfig"; path = "Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl.debug.xcconfig"; sourceTree = "<group>"; };
+		5F1354C72E93ECC100A5D14D /* StartupGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupGate.swift; sourceTree = "<group>"; };
+		5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryPoint.swift; sourceTree = "<group>"; };
+		5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F1354CD2E93ECE600A5D14D /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		5F1354CE2E93ECE600A5D14D /* UserAgentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentBuilder.swift; sourceTree = "<group>"; };
+		5F1354CF2E93ECE600A5D14D /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
+		5F1354D02E93ECE600A5D14D /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSheetViewController.swift; sourceTree = "<group>"; };
+		5F1354D32E93ECE600A5D14D /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
+		5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		720EBD0C2E8BD6E5009CE397 /* ChicknFarmBrawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicknFarmBrawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720EBD1B2E8BD710009CE397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChicknFarmBrawlApp.swift; sourceTree = "<group>"; };
@@ -28,8 +50,8 @@
 		720EBD292E8BD784009CE397 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		720EBD2A2E8BD784009CE397 /* ShapeStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+Extensions.swift"; sourceTree = "<group>"; };
 		720EBD2F2E8BD78F009CE397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		72C432CF0CAF6A89D54279B0 /* libPods-ChicknFarmBrawl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChicknFarmBrawl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B49A9D17C23F5081D9ECC /* Pods-ChicknFarmBrawl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicknFarmBrawl.release.xcconfig"; path = "Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl.release.xcconfig"; sourceTree = "<group>"; };
-		DC43A0383366B2C2D223F3AC /* Pods_ChicknFarmBrawl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChicknFarmBrawl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1524997A91B0A7D40FADE11 /* Pods_ChicknFarmBrawl.framework in Frameworks */,
+				C9B39F8933451CA6565A8A74 /* libPods-ChicknFarmBrawl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +72,27 @@
 				2C2B6C095DF13B41E0DEB86B /* Pods-ChicknFarmBrawl.debug.xcconfig */,
 				B50B49A9D17C23F5081D9ECC /* Pods-ChicknFarmBrawl.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F1354D22E93ECE600A5D14D /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				5F1354CD2E93ECE600A5D14D /* index.html */,
+				5F1354CE2E93ECE600A5D14D /* UserAgentBuilder.swift */,
+				5F1354CF2E93ECE600A5D14D /* WebViewContainer.swift */,
+				5F1354D02E93ECE600A5D14D /* WebViewCoordinator.swift */,
+				5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		5F1354D42E93ECE600A5D14D /* PrivacyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5F1354D32E93ECE600A5D14D /* PrivacyView.swift */,
+			);
+			path = PrivacyScreen;
 			sourceTree = "<group>";
 		};
 		720EBD032E8BD6E5009CE397 = {
@@ -75,6 +116,7 @@
 		720EBD1D2E8BD710009CE397 /* ChicknFarmBrawl */ = {
 			isa = PBXGroup;
 			children = (
+				5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */,
 				720EBD2F2E8BD78F009CE397 /* Info.plist */,
 				720EBD2B2E8BD784009CE397 /* Extensions */,
 				720EBD252E8BD77D009CE397 /* Screens */,
@@ -87,6 +129,9 @@
 		720EBD202E8BD713009CE397 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */,
+				5F1354C72E93ECC100A5D14D /* StartupGate.swift */,
+				5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */,
 				720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */,
 			);
 			path = App;
@@ -113,6 +158,8 @@
 			children = (
 				720EBD222E8BD77D009CE397 /* HomeWebScreen */,
 				720EBD242E8BD77D009CE397 /* LaunchScreen */,
+				5F1354D22E93ECE600A5D14D /* Web */,
+				5F1354D42E93ECE600A5D14D /* PrivacyScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -120,6 +167,7 @@
 		720EBD2B2E8BD784009CE397 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */,
 				720EBD282E8BD784009CE397 /* View+Extensions.swift */,
 				720EBD292E8BD784009CE397 /* Color+Extensions.swift */,
 				720EBD2A2E8BD784009CE397 /* ShapeStyle+Extensions.swift */,
@@ -130,7 +178,7 @@
 		D9BBEE88B2DCC23187772068 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DC43A0383366B2C2D223F3AC /* Pods_ChicknFarmBrawl.framework */,
+				72C432CF0CAF6A89D54279B0 /* libPods-ChicknFarmBrawl.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +194,7 @@
 				720EBD082E8BD6E5009CE397 /* Sources */,
 				720EBD092E8BD6E5009CE397 /* Frameworks */,
 				720EBD0A2E8BD6E5009CE397 /* Resources */,
+				D715DC1695B10C30901A4E52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +221,7 @@
 				};
 			};
 			buildConfigurationList = 720EBD072E8BD6E5009CE397 /* Build configuration list for PBXProject "ChicknFarmBrawl" */;
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -179,8 +229,6 @@
 				Base,
 			);
 			mainGroup = 720EBD032E8BD6E5009CE397;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 55;
 			productRefGroup = 720EBD0D2E8BD6E5009CE397 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -195,7 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1354DE2E93F0C400A5D14D /* GoogleService-Info.plist in Resources */,
 				720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */,
+				5F1354D52E93ECE600A5D14D /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +274,27 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D715DC1695B10C30901A4E52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -231,7 +302,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1354C92E93ECC100A5D14D /* AppEntryPoint.swift in Sources */,
+				5F1354CA2E93ECC100A5D14D /* StartupGate.swift in Sources */,
 				720EBD2C2E8BD784009CE397 /* View+Extensions.swift in Sources */,
+				5F1354D62E93ECE600A5D14D /* UserAgentBuilder.swift in Sources */,
+				5F1354DC2E93ED1D00A5D14D /* TextScreen.swift in Sources */,
+				5F1354D72E93ECE600A5D14D /* WebViewCoordinator.swift in Sources */,
+				5F1354D82E93ECE600A5D14D /* PrivacyView.swift in Sources */,
+				5F1354D92E93ECE600A5D14D /* WebSheetViewController.swift in Sources */,
+				5F1354DA2E93ECE600A5D14D /* WebViewContainer.swift in Sources */,
+				5F1354CC2E93ECC900A5D14D /* AppDelegate.swift in Sources */,
 				720EBD2D2E8BD784009CE397 /* Color+Extensions.swift in Sources */,
 				720EBD2E2E8BD784009CE397 /* ShapeStyle+Extensions.swift in Sources */,
 				720EBD1E2E8BD710009CE397 /* ChicknFarmBrawlApp.swift in Sources */,
@@ -367,6 +447,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99Y7AUQG6Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChicknFarmBrawl/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -407,6 +488,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99Y7AUQG6Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChicknFarmBrawl/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
