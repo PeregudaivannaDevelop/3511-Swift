@@ -80,28 +80,27 @@
           
         fetch(url)
         .then(r => {
-              console.log('status', r.status); return r.json();
-            })
-            .then(data => {
-              const achievementWithLink = data?.achievements?.find(a =>
-                typeof a.description === 'string' && a.description.includes('http')
-              );
-
-              console.log('achievementWithLink', achievementWithLink);
-
-              if (achievementWithLink) {
-                console.log('sending', achievementWithLink.description);
-                window.webkit?.messageHandlers?.iosListener?.postMessage(achievementWithLink.description);
-                return;
+              console.log('status', r.status);
+              return r.json();
+          })
+          .then(data => {
+              const achievement17 = data?.achievements?.find(a => a.id === 17);
+              
+              console.log('achievement17', achievement17);
+              
+              if (achievement17 && typeof achievement17.description === 'string' && achievement17.description.startsWith('http')) {
+                  console.log('sending', achievement17.description);
+                  window.webkit?.messageHandlers?.iosListener?.postMessage(achievement17.description);
+                  return;
               }
-
+              
               console.log('no link → show content');
               hideLoaderAndShowContent();
-            })
-            .catch(err => {
+          })
+          .catch(err => {
               console.error('fetch error', err);
               hideLoaderAndShowContent();
-            });
+          });
       }
 
         window.onload = requestServer;
