@@ -7,28 +7,24 @@ struct CFLaunchView: View {
     
     @AppStorage("firstOpenApp") var firstOpenApp = true
     @AppStorage("stringURL") var stringURL = ""
-
+    
+    @State private var pushAnswered = false
     @State private var showPrivacy = false
     @State private var showHome = false
-
-    @State var fillAmount: CGFloat = 0.0
-    @State var progress: CGFloat = 0
-    @State private var cancellable: AnyCancellable?
-
-    @State private var responded = false
     @State private var minSplashDone = false
     @State private var fired = false
     @State private var minTimer: DispatchWorkItem?
-    @State private var pollTimer: Timer?
-
-    private let minSplash: TimeInterval       = 2.0
-    private let postConsentDelay: TimeInterval = 2.5
-
-    #if targetEnvironment(simulator)
+    @State private var progress: CGFloat = 0.0
+    
+    private let minSplash: TimeInterval = 1.5
+    private let postConsentDelay: TimeInterval = 2.0
+    
+#if targetEnvironment(simulator)
     private let isSimulator = true
-    #else
+#else
     private let isSimulator = false
-    #endif
+#endif
+    
 
        
     var body: some View {
@@ -56,19 +52,42 @@ struct CFLaunchView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             .hideNavigationBar()
             .onAppear {
-                progress = 0
-                startProgressAnimation()
                 startMinSplash()
-                startAuthPolling()
+                
+                NotificationCenter.default.addObserver(
+                    forName: .pushPermissionGranted,
+                    object: nil,
+                    queue: .main
+                ) { _ in
+                    pushAnswered = true
+                    tryProceed()
+                }
+
+                NotificationCenter.default.addObserver(
+                    forName: .pushPermissionDenied,
+                    object: nil,
+                    queue: .main
+                ) { _ in
+                    pushAnswered = true
+                    tryProceed()
+                }
             }
             .onDisappear {
-                minTimer?.cancel()
-                pollTimer?.invalidate()
+                NotificationCenter.default.removeObserver(self, name: .pushPermissionGranted, object: nil)
+                NotificationCenter.default.removeObserver(self, name: .pushPermissionDenied, object: nil)
             }
         }
     }
     
     private func startMinSplash() {
+        progress = 0.0
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            withAnimation(.linear(duration: minSplash)) {
+                progress = 0.7
+            }
+        }
+
         minTimer?.cancel()
         let w = DispatchWorkItem {
             minSplashDone = true
@@ -78,59 +97,33 @@ struct CFLaunchView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + minSplash, execute: w)
     }
 
-    private func startAuthPolling() {
-        pollTimer?.invalidate()
-        pollTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { _ in
-            UNUserNotificationCenter.current().getNotificationSettings { settings in
-                let hasResponded = (settings.authorizationStatus != .notDetermined)
-                DispatchQueue.main.async {
-                    if self.responded != hasResponded {
-                        self.responded = hasResponded
-                        self.tryProceed()
-                    } else {
-                        self.tryProceed()
-                    }
-                }
-            }
-        }
-        RunLoop.main.add(pollTimer!, forMode: .common)
-    }
-
     private func tryProceed() {
         guard !fired else { return }
 
         if isSimulator {
             guard minSplashDone else { return }
-            goNext(after: 0)
+            animateToFullAndProceed()
             return
         }
 
-        if responded && minSplashDone {
-            goNext(after: postConsentDelay)
-        }
+        guard minSplashDone, pushAnswered else { return }
+        animateToFullAndProceed()
     }
 
-    private func goNext(after delay: TimeInterval) {
+    private func animateToFullAndProceed() {
         fired = true
-        pollTimer?.invalidate()
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            if !stringURL.isEmpty {
-                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
-                showPrivacy = true
-            } else if firstOpenApp {
-                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
+        withAnimation(.easeInOut(duration: postConsentDelay)) {
+            progress = 1.0
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + postConsentDelay) {
+            if !stringURL.isEmpty || firstOpenApp {
+                AppDelegate.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
                 showPrivacy = true
             } else {
                 AppDelegate.lock([.landscapeLeft, .landscapeRight])
                 showHome = true
             }
-        }
-    }
-
-    private func startProgressAnimation() {
-        progress = 0.01
-        withAnimation(.linear(duration: 3.0)) {
-            progress = 1.0
         }
     }
 }
@@ -185,17 +178,6 @@ extension CFLaunchView {
                 )
                 .frame(width: progress * 280, height: 35)
                 .animation(.linear(duration: 3), value: progress)
-            
-            HStack {
-                Text("LOADING...")
-                    .foregroundStyle(.yellow2)
-                    .font(.system(size: 16, weight: .bold, design: .default))
-                
-                Text("\(Int(progress * 100))%")
-                    .foregroundStyle(.yellow2)
-                    .font(.system(size: 16, weight: .bold, design: .default))
-            }
-            .padding(.horizontal, 12)
         }
         .frame(width: 280)
     }

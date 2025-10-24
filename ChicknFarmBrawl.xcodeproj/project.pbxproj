@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5F1354C92E93ECC100A5D14D /* AppEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */; };
-		5F1354CA2E93ECC100A5D14D /* StartupGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354C72E93ECC100A5D14D /* StartupGate.swift */; };
 		5F1354CC2E93ECC900A5D14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */; };
 		5F1354D52E93ECE600A5D14D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F1354CD2E93ECE600A5D14D /* index.html */; };
 		5F1354D62E93ECE600A5D14D /* UserAgentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CE2E93ECE600A5D14D /* UserAgentBuilder.swift */; };
@@ -17,7 +16,7 @@
 		5F1354D92E93ECE600A5D14D /* WebSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */; };
 		5F1354DA2E93ECE600A5D14D /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CF2E93ECE600A5D14D /* WebViewContainer.swift */; };
 		5F1354DC2E93ED1D00A5D14D /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */; };
-		5F1354DE2E93F0C400A5D14D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */; };
+		5F1E1C5B2EAB8EFE00E1CD05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */; };
 		720EBD1E2E8BD710009CE397 /* ChicknFarmBrawlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */; };
 		720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720EBD1B2E8BD710009CE397 /* Assets.xcassets */; };
 		720EBD262E8BD77D009CE397 /* CFHomeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD212E8BD77D009CE397 /* CFHomeWebView.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		2C2B6C095DF13B41E0DEB86B /* Pods-ChicknFarmBrawl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicknFarmBrawl.debug.xcconfig"; path = "Target Support Files/Pods-ChicknFarmBrawl/Pods-ChicknFarmBrawl.debug.xcconfig"; sourceTree = "<group>"; };
-		5F1354C72E93ECC100A5D14D /* StartupGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupGate.swift; sourceTree = "<group>"; };
 		5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryPoint.swift; sourceTree = "<group>"; };
 		5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F1354CD2E93ECE600A5D14D /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -40,8 +38,8 @@
 		5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSheetViewController.swift; sourceTree = "<group>"; };
 		5F1354D32E93ECE600A5D14D /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
-		5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F1354DF2E93F21000A5D14D /* ChicknFarmBrawl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChicknFarmBrawl.entitlements; sourceTree = "<group>"; };
+		5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		720EBD0C2E8BD6E5009CE397 /* ChicknFarmBrawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicknFarmBrawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720EBD1B2E8BD710009CE397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChicknFarmBrawlApp.swift; sourceTree = "<group>"; };
@@ -117,8 +115,8 @@
 		720EBD1D2E8BD710009CE397 /* ChicknFarmBrawl */ = {
 			isa = PBXGroup;
 			children = (
+				5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */,
 				5F1354DF2E93F21000A5D14D /* ChicknFarmBrawl.entitlements */,
-				5F1354DD2E93F0C400A5D14D /* GoogleService-Info.plist */,
 				720EBD2F2E8BD78F009CE397 /* Info.plist */,
 				720EBD2B2E8BD784009CE397 /* Extensions */,
 				720EBD252E8BD77D009CE397 /* Screens */,
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				5F1354CB2E93ECC900A5D14D /* AppDelegate.swift */,
-				5F1354C72E93ECC100A5D14D /* StartupGate.swift */,
 				5F1354C82E93ECC100A5D14D /* AppEntryPoint.swift */,
 				720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */,
 			);
@@ -245,8 +242,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F1354DE2E93F0C400A5D14D /* GoogleService-Info.plist in Resources */,
 				720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */,
+				5F1E1C5B2EAB8EFE00E1CD05 /* GoogleService-Info.plist in Resources */,
 				5F1354D52E93ECE600A5D14D /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F1354C92E93ECC100A5D14D /* AppEntryPoint.swift in Sources */,
-				5F1354CA2E93ECC100A5D14D /* StartupGate.swift in Sources */,
 				720EBD2C2E8BD784009CE397 /* View+Extensions.swift in Sources */,
 				5F1354D62E93ECE600A5D14D /* UserAgentBuilder.swift in Sources */,
 				5F1354DC2E93ED1D00A5D14D /* TextScreen.swift in Sources */,
@@ -448,11 +444,14 @@
 				CODE_SIGN_ENTITLEMENTS = ChicknFarmBrawl/ChicknFarmBrawl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AMAJTW27Q4;
+				DEVELOPMENT_TEAM = 4NSB29K6FK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChicknFarmBrawl/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take a profile photo for your account.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to allow voice input";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo library to take a profile photo for your account.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -467,8 +466,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpush.app;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -490,11 +489,14 @@
 				CODE_SIGN_ENTITLEMENTS = ChicknFarmBrawl/ChicknFarmBrawl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AMAJTW27Q4;
+				DEVELOPMENT_TEAM = 4NSB29K6FK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChicknFarmBrawl/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take a profile photo for your account.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to allow voice input";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo library to take a profile photo for your account.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -509,8 +511,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpush.app;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;

@@ -4,10 +4,13 @@ import WebKit
 // MARK: - WebViewCoordinator
 
 final class WebViewCoordinator: NSObject, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate {
+    var lastLoadedURL: String = ""
     private var redirectCount = 0
     private var wasCatchDetected = false
-    private let baseDomain = "chicknfarmbrawl.website"
+    private let baseDomain = "http://chicknfarmbrawl.website"
+    private let baseSecurityDomain = "https://chicknfarmbrawl.website"
     private var hasHandledScore = false
+    private var hasSavedFinalURL = false
     
     var parent: WebViewContainer
     var webView: WKWebView?
@@ -33,10 +36,6 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate, WKScriptMessageH
         _ userContentController: WKUserContentController,
         didReceive message: WKScriptMessage
     ) {
-        
-        if message.name == "log" {
-            print("🌐 JS:", message.body)
-        }
         switch message.name {
         case "iosListener":
             if let urlString = message.body as? String,
@@ -51,12 +50,19 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate, WKScriptMessageH
             
         case "contentLoaded":
             triggerContentLoadedIfNeeded()
+        case "closeWindow":
+            print("🧹 Received closeWindow message from JS")
+            if let vc = webView?.findViewController() {
+                vc.dismiss(animated: true)
+            } else {
+                webView?.removeFromSuperview()
+            }
             
         default:
             break
         }
     }
-    
+
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
@@ -66,59 +72,36 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate, WKScriptMessageH
             decisionHandler(.allow)
             return
         }
-
-        let urlString = url.absoluteString
-        print("🔄 [Redirect \(redirectCount + 1)] → \(urlString)")
         
-        if url.isFileURL {
-            print("📂 Skipping file URL: \(urlString)")
+        guard navigationAction.targetFrame?.isMainFrame == true else {
+            decisionHandler(.allow)
+            return
+        }
+        
+        let urlString = url.absoluteString
+        print("🔄 Navigation → \(urlString)")
+        
+        if url.isFileURL || urlString.starts(with: "about:blank") {
+            decisionHandler(.allow)
+            return
+        }
+        
+        if urlString.contains("catch.php") {
+            wasCatchDetected = true
+            print("🎯 Detected catch.php: \(urlString)")
             decisionHandler(.allow)
             return
         }
 
-        if urlString.starts(with: "about:blank") {
-            decisionHandler(.allow)
-            return
-        }
-
-        redirectCount += 1
-
-        if redirectCount == 1 {
-            if urlString.contains("catch.php") {
-                wasCatchDetected = false
-                print("🎯 Detected catch.php: \(urlString)")
-            } else {
-                wasCatchDetected = true
-                print("⚠️ Redirect 1 without catch.php: \(urlString)")
-                triggerContentLoadedIfNeeded()
-            }
-            decisionHandler(.allow)
-            return
-        }
-
-        if redirectCount == 2 {
-            if url.host?.contains(baseDomain) == true {
-                print("⚠️ Skipped because contains base domain: \(urlString)")
-                triggerContentLoadedIfNeeded()
-                decisionHandler(.cancel)
-                return
-            }
-
-            print("✅ Saved final URL: \(urlString)")
-            UserDefaults.standard.set(urlString, forKey: "stringURL")
-            decisionHandler(.allow)
-            return
-        }
-
-        if wasCatchDetected && url.host?.contains(baseDomain) == true {
-            print("🛑 Blocked fallback base domain after catch chain")
+        if wasCatchDetected && (urlString.starts(with: baseDomain) || urlString.starts(with: baseSecurityDomain)) {
+            print("🛑 Blocked fallback base domain after catch")
             triggerContentLoadedIfNeeded()
             decisionHandler(.cancel)
+            wasCatchDetected = false
             return
         }
         
         let scheme = url.scheme?.lowercased() ?? ""
-
         if !["http", "https", "about"].contains(scheme) {
             if UIApplication.shared.canOpenURL(url) {
                 print("📲 Opening external URL via UIApplication: \(url.absoluteString)")
@@ -133,6 +116,46 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate, WKScriptMessageH
         }
         
         decisionHandler(.allow)
+    }
+    
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationResponse: WKNavigationResponse,
+        decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void
+    ) {
+        if let response = navigationResponse.response as? HTTPURLResponse,
+           let mimeType = response.mimeType,
+           let finalURL = response.url {
+
+            if mimeType == "application/vnd.android.package-archive"
+                || mimeType == "application/octet-stream"
+                || finalURL.pathExtension.lowercased() == "apk" {
+
+                print("🚫 Blocked APK / binary download → \(finalURL.absoluteString)")
+                decisionHandler(.cancel)
+                return
+            }
+
+            if 200...299 ~= response.statusCode,
+               !finalURL.absoluteString.contains("catch.php"),
+               !(finalURL.host?.contains(baseDomain) ?? false),
+               !hasSavedFinalURL {
+
+                print("✅ Saved final URL: \(finalURL.absoluteString)")
+                hasSavedFinalURL = true
+                UserDefaults.standard.set(finalURL.absoluteString, forKey: "stringURL")
+                triggerContentLoadedIfNeeded()
+            }
+        }
+
+        decisionHandler(.allow)
+    }
+    
+    func webView(
+        _ webView: WKWebView,
+        didStartProvisionalNavigation navigation: WKNavigation!
+    ) {
+        didLoadContent = false
     }
     
     func webView(
@@ -201,3 +224,15 @@ extension WKWebView {
         self.customUserAgent = uaBuilder.build(desktopMode: desktop)
     }
 }
+
+private extension UIView {
+    func findViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let next = responder?.next {
+            if let vc = next as? UIViewController { return vc }
+            responder = next
+        }
+        return nil
+    }
+}
+
