@@ -52,6 +52,11 @@ struct CFLaunchView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             .hideNavigationBar()
             .onAppear {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    AppDelegate.lock([.portrait], rotateTo: .portrait)
+                }
+                
                 startMinSplash()
                 
                 NotificationCenter.default.addObserver(
@@ -118,10 +123,10 @@ struct CFLaunchView: View {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + postConsentDelay) {
             if !stringURL.isEmpty || firstOpenApp {
-                AppDelegate.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
+                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
                 showPrivacy = true
             } else {
-                AppDelegate.lock([.landscapeLeft, .landscapeRight])
+                AppDelegate.lock([.landscapeLeft, .landscapeRight], rotateTo: .landscapeRight)
                 showHome = true
             }
         }

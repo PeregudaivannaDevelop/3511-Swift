@@ -10,7 +10,7 @@ struct CFHomeWebView: View {
             .hideNavigationBar()
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                    AppDelegate.lock([.landscapeLeft, .landscapeRight], rotateTo: .landscapeRight)
+                    AppDelegate.lock([.landscapeLeft, .landscapeRight])
                 }
             }
     }

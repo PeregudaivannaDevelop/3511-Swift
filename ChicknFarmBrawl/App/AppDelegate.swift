@@ -5,18 +5,23 @@ import UserNotifications
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    static var orientationLock: UIInterfaceOrientationMask = [.landscapeLeft, .landscapeRight]
-
+    static var orientationLock: UIInterfaceOrientationMask = [.portrait, .landscape]
+    private static var currentOrientation: UIInterfaceOrientation = .portrait
+    
+    // MARK: - Orientation Handling
     static func lock(_ mask: UIInterfaceOrientationMask, rotateTo orientation: UIInterfaceOrientation? = nil) {
         orientationLock = mask
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        if #available(iOS 16.0, *) {
-            try? scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask))
-            scene.windows.first?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()
-        } else {
-            if let orientation = orientation {
+        
+        if let orientation = orientation,
+           orientation != currentOrientation {
+            
+            currentOrientation = orientation
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
                 UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+                UIViewController.attemptRotationToDeviceOrientation()
             }
+        } else {
             UIViewController.attemptRotationToDeviceOrientation()
         }
     }
@@ -40,8 +45,27 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().isAutoInitEnabled = true
         log("✅ Firebase configured")
 
-        requestPushAuthorization()
+        // MARK: 🔧 Orientation Setup
+        let stringURL = UserDefaults.standard.string(forKey: "stringURL") ?? ""
+        if stringURL.isEmpty {
+            Self.orientationLock = [.portrait]
+            Self.currentOrientation = .portrait
+            log("📱 Orientation set to Portrait (first launch)")
+        } else {
+            Self.orientationLock = [.portrait, .landscapeLeft, .landscapeRight]
+            
+            if UIDevice.current.orientation.isLandscape {
+                Self.currentOrientation = UIDevice.current.orientation == .landscapeLeft ? .landscapeLeft : .landscapeRight
+            } else {
+                Self.currentOrientation = .portrait
+            }
+            
+            UIDevice.current.setValue(Self.currentOrientation.rawValue, forKey: "orientation")
+            UIViewController.attemptRotationToDeviceOrientation()
+            log("📱 OrientationLock set to All, current = \(Self.currentOrientation.rawValue)")
+        }
 
+        requestPushAuthorization()
         return true
     }
 

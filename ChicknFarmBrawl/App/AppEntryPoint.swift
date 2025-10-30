@@ -27,14 +27,10 @@ struct AppEntryPoint: View {
         }
         .onAppear {
             if !stringURL.isEmpty {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                    AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
-                }
+                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
                 selectedRoute = .privacy
             } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                    AppDelegate.lock([.landscapeLeft, .landscapeRight])
-                }
+                AppDelegate.lock([.portrait], rotateTo: .portrait)
                 selectedRoute = .launch
             }
         }

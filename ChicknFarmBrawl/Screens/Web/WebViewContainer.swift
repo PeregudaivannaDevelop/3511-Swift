@@ -44,6 +44,9 @@ struct WebViewContainer: UIViewRepresentable {
         webConfiguration.userContentController.addUserScript(userScript)
 
         let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.scrollView.minimumZoomScale = 1.0
+        webView.scrollView.maximumZoomScale = 1.0
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true

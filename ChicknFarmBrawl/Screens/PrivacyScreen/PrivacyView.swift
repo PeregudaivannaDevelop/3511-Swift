@@ -69,14 +69,13 @@ struct PrivacyView: View {
         }
         .hideNavigationBar()
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight], rotateTo: .portrait)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                AppDelegate.lock([.portrait, .landscapeLeft, .landscapeRight])
             }
         }
-
         .onDisappear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                AppDelegate.lock([.landscapeLeft, .landscapeRight])
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                AppDelegate.lock([.landscapeLeft, .landscapeRight], rotateTo: .landscapeRight)
             }
         }
     }
