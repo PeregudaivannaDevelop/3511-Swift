@@ -16,7 +16,7 @@
 		5F1354D92E93ECE600A5D14D /* WebSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354D12E93ECE600A5D14D /* WebSheetViewController.swift */; };
 		5F1354DA2E93ECE600A5D14D /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354CF2E93ECE600A5D14D /* WebViewContainer.swift */; };
 		5F1354DC2E93ED1D00A5D14D /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */; };
-		5F1E1C5B2EAB8EFE00E1CD05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */; };
+		5FC1DAC92EB3663D004AA8DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC1DAC82EB3663D004AA8DF /* GoogleService-Info.plist */; };
 		720EBD1E2E8BD710009CE397 /* ChicknFarmBrawlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */; };
 		720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720EBD1B2E8BD710009CE397 /* Assets.xcassets */; };
 		720EBD262E8BD77D009CE397 /* CFHomeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EBD212E8BD77D009CE397 /* CFHomeWebView.swift */; };
@@ -39,7 +39,7 @@
 		5F1354D32E93ECE600A5D14D /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		5F1354DB2E93ED1D00A5D14D /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		5F1354DF2E93F21000A5D14D /* ChicknFarmBrawl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChicknFarmBrawl.entitlements; sourceTree = "<group>"; };
-		5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FC1DAC82EB3663D004AA8DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		720EBD0C2E8BD6E5009CE397 /* ChicknFarmBrawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicknFarmBrawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720EBD1B2E8BD710009CE397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720EBD1C2E8BD710009CE397 /* ChicknFarmBrawlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChicknFarmBrawlApp.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		720EBD1D2E8BD710009CE397 /* ChicknFarmBrawl */ = {
 			isa = PBXGroup;
 			children = (
-				5F1E1C5A2EAB8EFE00E1CD05 /* GoogleService-Info.plist */,
+				5FC1DAC82EB3663D004AA8DF /* GoogleService-Info.plist */,
 				5F1354DF2E93F21000A5D14D /* ChicknFarmBrawl.entitlements */,
 				720EBD2F2E8BD78F009CE397 /* Info.plist */,
 				720EBD2B2E8BD784009CE397 /* Extensions */,
@@ -242,8 +242,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC1DAC92EB3663D004AA8DF /* GoogleService-Info.plist in Resources */,
 				720EBD1F2E8BD710009CE397 /* Assets.xcassets in Resources */,
-				5F1E1C5B2EAB8EFE00E1CD05 /* GoogleService-Info.plist in Resources */,
 				5F1354D52E93ECE600A5D14D /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +444,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChicknFarmBrawl/ChicknFarmBrawl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NSB29K6FK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,7 +467,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PeregudaDev.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -489,7 +489,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChicknFarmBrawl/ChicknFarmBrawl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NSB29K6FK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -512,7 +512,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tritestpushsw.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PeregudaDev.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
